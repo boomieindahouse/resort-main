@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "resnewdb";
+    $dbname = "resortdb";
 
     $_conn = mysqli_connect($servername, $username,$password,$dbname);
 
