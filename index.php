@@ -7,11 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="register.php">
 </head>
+
 <body>
     <header><h1>Hello sdsdsdsd</h1></header>
     
     <div class = "content">
-        <a href="register.php">สมัครสมาชิก</a>
+        <a href="./views/register.php">สมัครสมาชิก</a>
         <a href="login.php">เข้าสู่ระบบ</a>
 <?php if(isset($_SESSION['succes'])); ?>
     <div class="susses">

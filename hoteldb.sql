@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2023 at 06:58 PM
+-- Generation Time: Sep 06, 2023 at 03:41 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `resortdb`
+-- Database: `hoteldb`
 --
 
 -- --------------------------------------------------------
@@ -1048,14 +1048,22 @@ INSERT INTO `amphures` (`amphure_id`, `code`, `name_th`, `name_en`, `province_id
 CREATE TABLE `booking` (
   `booking_id` int(11) NOT NULL,
   `room_id` int(11) NOT NULL,
-  `checkin_date` date NOT NULL,
-  `checkout_date` date NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
   `reservation_date` date DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `payment_slip_image` blob DEFAULT NULL,
   `booking_status` varchar(20) DEFAULT NULL,
   `room_detail_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`booking_id`, `room_id`, `start_date`, `end_date`, `reservation_date`, `user_id`, `payment_slip_image`, `booking_status`, `room_detail_id`) VALUES
+(1, 102, '2023-09-06', '2023-09-08', '2023-09-06', NULL, NULL, NULL, 11),
+(2, 105, '2023-09-06', '2023-09-07', '2023-09-06', NULL, NULL, NULL, 12);
 
 -- --------------------------------------------------------
 
@@ -9942,10 +9950,10 @@ INSERT INTO `districts` (`district_id`, `zip_code`, `name_th`, `name_en`, `amphu
 
 CREATE TABLE `event` (
   `event_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
-  `event` varchar(255) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL
+  `event` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -10051,10 +10059,34 @@ INSERT INTO `provinces` (`province_id`, `code`, `name_th`, `name_en`) VALUES
 --
 
 CREATE TABLE `room` (
-  `room_id` varchar(10) NOT NULL,
+  `room_id` int(3) NOT NULL,
   `room_status` varchar(20) DEFAULT NULL,
   `room_detail_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`room_id`, `room_status`, `room_detail_id`) VALUES
+(101, 'ว่าง', 11),
+(102, 'ว่าง', 11),
+(103, 'ว่าง', 11),
+(104, 'ว่าง', 11),
+(105, 'ว่าง', 12),
+(106, 'ว่าง', 12),
+(107, 'ว่าง', 12),
+(108, 'ว่าง', 11),
+(109, 'ว่าง', 11),
+(110, 'ว่าง', 11),
+(201, 'ว่าง', 22),
+(202, 'ว่าง', 22),
+(203, 'ว่าง', 22),
+(204, 'ว่าง', 21),
+(205, 'ว่าง', 22),
+(206, 'ว่าง', 22),
+(207, 'ว่าง', 22),
+(208, 'ว่าง', 22);
 
 -- --------------------------------------------------------
 
@@ -10069,6 +10101,16 @@ CREATE TABLE `room_details` (
   `price` decimal(10,2) DEFAULT NULL,
   `img_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `room_details`
+--
+
+INSERT INTO `room_details` (`room_detail_id`, `zone`, `room_type_id`, `price`, `img_id`) VALUES
+(11, '1', 1, 450.00, NULL),
+(12, '1', 2, 500.00, NULL),
+(21, '2', 1, 450.00, NULL),
+(22, '2', 2, 500.00, NULL);
 
 -- --------------------------------------------------------
 
@@ -10093,6 +10135,14 @@ CREATE TABLE `room_type` (
   `name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `room_type`
+--
+
+INSERT INTO `room_type` (`room_type_id`, `name`) VALUES
+(1, 'เตียงเดี่ยว'),
+(2, 'เตียงคู่');
+
 -- --------------------------------------------------------
 
 --
@@ -10101,13 +10151,12 @@ CREATE TABLE `room_type` (
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `fname` varchar(50) NOT NULL,
-  `lname` varchar(50) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `phone` int(10) NOT NULL,
-  `room_id` varchar(10) NOT NULL,
-  `districts_id` varchar(6) NOT NULL,
-  `personal_id` int(13) NOT NULL
+  `room_id` int(3) NOT NULL,
+  `districts_id` varchar(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -10115,37 +10164,123 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `amphures`
+--
+ALTER TABLE `amphures`
+  ADD PRIMARY KEY (`amphure_id`),
+  ADD KEY `province_id` (`province_id`);
+
+--
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`room_id`,`start_date`,`end_date`),
+  ADD KEY `FK_Admin_Booking` (`user_id`),
+  ADD KEY `FK_Room_details_Booking` (`room_detail_id`);
+
+--
+-- Indexes for table `districts`
+--
+ALTER TABLE `districts`
+  ADD PRIMARY KEY (`district_id`),
+  ADD KEY `amphure_id` (`amphure_id`);
+
+--
 -- Indexes for table `event`
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`event_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `event_ibfk_1` (`user_id`);
+
+--
+-- Indexes for table `provinces`
+--
+ALTER TABLE `provinces`
+  ADD PRIMARY KEY (`province_id`);
+
+--
+-- Indexes for table `room`
+--
+ALTER TABLE `room`
+  ADD PRIMARY KEY (`room_id`),
+  ADD KEY `FK_Room_RoomDetails` (`room_detail_id`);
+
+--
+-- Indexes for table `room_details`
+--
+ALTER TABLE `room_details`
+  ADD PRIMARY KEY (`room_detail_id`),
+  ADD KEY `FK_RoomIMG_RoomDetails` (`img_id`),
+  ADD KEY `FK_RoomType_RoomDetails` (`room_type_id`);
+
+--
+-- Indexes for table `room_img`
+--
+ALTER TABLE `room_img`
+  ADD PRIMARY KEY (`img_id`);
+
+--
+-- Indexes for table `room_type`
+--
+ALTER TABLE `room_type`
+  ADD PRIMARY KEY (`room_type_id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `districts_id` (`districts_id`),
+  ADD KEY `FK_Room_Users` (`room_id`);
 
 --
 -- Constraints for dumped tables
 --
 
 --
+-- Constraints for table `amphures`
+--
+ALTER TABLE `amphures`
+  ADD CONSTRAINT `amphures_ibfk_1` FOREIGN KEY (`province_id`) REFERENCES `provinces` (`province_id`);
+
+--
+-- Constraints for table `booking`
+--
+ALTER TABLE `booking`
+  ADD CONSTRAINT `FK_Room_details_Booking` FOREIGN KEY (`room_detail_id`) REFERENCES `room_details` (`room_detail_id`);
+
+--
+-- Constraints for table `districts`
+--
+ALTER TABLE `districts`
+  ADD CONSTRAINT `districts_ibfk_1` FOREIGN KEY (`amphure_id`) REFERENCES `amphures` (`amphure_id`);
+
+--
 -- Constraints for table `event`
 --
 ALTER TABLE `event`
+  ADD CONSTRAINT `FK_Event` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   ADD CONSTRAINT `event_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+--
+-- Constraints for table `room`
+--
+ALTER TABLE `room`
+  ADD CONSTRAINT `FK_Room_RoomDetails` FOREIGN KEY (`room_detail_id`) REFERENCES `room_details` (`room_detail_id`);
+
+--
+-- Constraints for table `room_details`
+--
+ALTER TABLE `room_details`
+  ADD CONSTRAINT `FK_RoomIMG_RoomDetails` FOREIGN KEY (`img_id`) REFERENCES `room_img` (`img_id`),
+  ADD CONSTRAINT `FK_RoomType_RoomDetails` FOREIGN KEY (`room_type_id`) REFERENCES `room_type` (`room_type_id`);
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `FK_Room_Users` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`),
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`districts_id`) REFERENCES `districts` (`district_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

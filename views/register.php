@@ -1,4 +1,7 @@
-<?php include('server.php'); ?>
+<?php 
+   include_once("server.php");
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +12,10 @@
 <body>
     <h1>Project</h1>
 
-    <form action="test.db" method="post">
+    <form action="/register_db" method="post">
         <div class="input-info">
-            <label for="cardid">เลขบัตรประชาชน</label>
-            <input type="text" name="cardid">
+            <label for="personal_id">เลขบัตรประชาชน</label>
+            <input type="personal_id" name="personal_id">
         </div>
         <div class="input-info">
             <label for="passwords">รหัสผ่าน</label>
@@ -20,18 +23,18 @@
         </div>
         <div class="input-info">
             <label for="FirstName">ชื่อจริง</label>
-            <input type="text" name="FirstName">
+            <input type="fname" name="fname">
         </div>
         <div class="input-info">
             <label for="LastName">นามสกุล</label>
-            <input type="text" name="LastName">
+            <input type="lname" name="lname">
         </div>
         <div class="input-info">
             <label for="Email">อีเมลล์</label>
-            <input type="text" name="Email">
+            <input type="email" name="Email">
         </div>
         <div class="input-info">
-            <button type="submit" name="reg_id" class ="btn" >Register</button>
+            <input type="submit" name="reg_id" value="Sign in" >
         </div>
         <p>คลิกเพื่อ เข้าสู่ระบบ<a href="login.php">Login</a></p>
         
