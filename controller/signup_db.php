@@ -4,6 +4,7 @@
     require_once 'server.php';
 
     if (isset($_POST['signup'])){
+        $personal_id = $_POST['personal_id'];
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $phone = $_POST['phone'];
@@ -11,8 +12,10 @@
         $password = $_POST['password'];
         $cfpassword = $_POST['cfpassword'];
         //$role = 'user'
-
-        if (empty($fname)) {
+        if (empty($personal_id)) {
+            $_SESSION['error'] = 'Please enter your personal_id';
+            header("location: signup.php");
+        } else if (empty($fname)) {
             $_SESSION['error'] = 'Please enter your first name';
             header("location: signup.php");
         } else if (empty($lname)) {
@@ -43,18 +46,19 @@
                 $check_email->execute();
                 $row = $check_email->fetch(PDO::FETCH_ASSOC);
 
-                if (row['email'] == $email){
+                if ($row['email'] == $email) {
                     $_SESSION['warning'] = "This email is unavailable <a href='signin.php'>Click here</a> to sing in";
                     header("location: signup.php");
                 }else if(!isset($_SESSION['error'])){
                     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-                    $stmt = $conn->prepare("INSERT INTO users(fname, lname, phone, email, password) 
-                                            VALUE(:fname, :lname, :phone, :email, :password)");
-                    $stmt->bindParam(":fname, $fname");
-                    $stmt->bindParam(":lname, $lname");
-                    $stmt->bindParam(":phone, $phone");
-                    $stmt->bindParam(":email, $email");
-                    $stmt->bindParam(":password, $passwordHash");
+                    $stmt = $conn->prepare("INSERT INTO users(personal_id, fname, lname, phone, email, password) 
+                                            VALUES(:personal_id, :fname, :lname, :phone, :email, :password)");
+                    $stmt->bindParam(":personal_id", $personal_id);
+                    $stmt->bindParam(":fname", $fname);
+                    $stmt->bindParam(":lname", $lname);
+                    $stmt->bindParam(":phone", $phone);
+                    $stmt->bindParam(":email", $email);
+                    $stmt->bindParam(":password", $passwordHash);
                     $stmt->execute();
                     $_SESSION['success'] = "Sign up completely! <a href='singup.php' class='alert-link'>Click here</a>for sign in";
                     header("location: signup.php");
@@ -68,6 +72,3 @@
             }
         }
     }
-
-
-?>
