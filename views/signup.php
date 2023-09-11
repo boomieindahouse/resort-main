@@ -16,7 +16,7 @@
 <body>
     <h1>Project</h1>
 
-    <form action="/signup_db" method="post">
+    <form action="singup_db.php" method="post">
         <?php if(isset($_SESSION['error'])) { ?>
         <div class="alert alert-danger" role="alert">
             <?php
