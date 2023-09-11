@@ -34,7 +34,7 @@
             $_SESSION['error'] = 'Please confirm your password';
             header("location: signup.php");
         } else if ($password != $cfpassword) {
-            $_SESSION['error'] = 'Password is not match, please try again'
+            $_SESSION['error'] = 'Password is not match, please try again';
             header("location: signup.php");
         } else {
             try {
@@ -57,10 +57,10 @@
                     $stmt->bindParam(":password, $passwordHash");
                     $stmt->execute();
                     $_SESSION['success'] = "Sign up completely! <a href='singup.php' class='alert-link'>Click here</a>for sign in";
-                    header("location: signup.php")
+                    header("location: signup.php");
                 } else {
                     $_SESSION['error'] = "We found something wrong"
-                    header("location: signup.php")
+                    header("location: signup.php");
                 }
 
             } catch(PDOException $e){
