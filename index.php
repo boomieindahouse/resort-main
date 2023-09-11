@@ -1,4 +1,7 @@
-<?php include('server.php');?>
+<?php
+    require_once 'server.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,20 +12,11 @@
 </head>
 
 <body>
-    <header><h1>Hello sdsdsdsd</h1></header>
+    <header><h1>Hello Project</h1></header>
     
     <div class = "content">
-        <a href="./views/register.php">สมัครสมาชิก</a>
-        <a href="login.php">เข้าสู่ระบบ</a>
-<?php if(isset($_SESSION['succes'])); ?>
-    <div class="susses">
-        <h3>
-            <?php
-                echo $_SESSION['succes'];
-                unset($_SESSION['succes']);
-            ?>
-        </h3>
-    </div>
+        <a href="./views/signup.php">สมัครสมาชิก</a>
+        <a href="signin.php">เข้าสู่ระบบ</a>
 
     </div>   
    
