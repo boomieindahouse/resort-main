@@ -1,5 +1,6 @@
 <?php
-    require_once 'server.php';
+    session_start();
+    require_once 'connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +16,8 @@
     <header><h1>Hello Project</h1></header>
     
     <div class = "content">
-        <a href="./views/signup.php">สมัครสมาชิก</a>
-        <a href="signin.php">เข้าสู่ระบบ</a>
+        <a href="views/signup.php">สมัครสมาชิก</a>
+        <a href="views/signin.php">เข้าสู่ระบบ</a>
 
     </div>   
    

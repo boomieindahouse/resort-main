@@ -1,22 +1,23 @@
-<?php 
-    //include_once("server.php");
+<?php
     session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Project</h1>
-
-    <form action="/signup_db" method="post">
+    <div class="container">
+        <h3 class="mt-4">Sign Up</h3>
+        <hr>
+        <form action="/signup_db" method="post">
         <?php if(isset($_SESSION['error'])) { ?>
         <div class="alert alert-danger" role="alert">
             <?php
@@ -42,35 +43,40 @@
         </div>
         <?php } ?>
 
+            <div class="mb-3">
+                <label for="email" class="form-label">เลขบัตรประชาชน</label>
+                <input type="text" class="form-control" id="personal_id" aria-describedy="personal-id">
+            </div>
+            <div class="mb-3">
+                <label for="first name" class="form-label">ชื่อ</label>
+                <input type="text" class="form-control" name="fname" aria-describedy="fname">
+            </div>
+            <div class="mb-3">
+                <label for="surname" class="form-label">นามสกุล</label>
+                <input type="text" class="form-control" name="lname" aria-describedy="lname">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">อีเมลล์</label>
+                <input type="email" class="form-control" name="email" aria-describedy="email">
+            </div>
+            <div class="mb-3">
+                <label for="phone number" class="form-label">เบอร์โทรศัพท์</label>
+                <input type="text" class="form-control" name="phone">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">รหัสผ่าน</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <div class="mb-3">
+                <label for="confirm password" class="form-label">ยืนยันรหัสผ่าน</label>
+                <input type="password" class="form-control" name="cfpassword">
+            </div>
+            <button type="submit" name="signup" class="btn btn-primary">sign up</button>
 
-        <div class="input-info">
-            <input type="text" placeholder='เลขบัตรประชาชน' name="personal_id">
-        </div>
-        <div class="input-info">
-            <input type="text" placeholder='ชื่อจริง' name="fname">
-        </div>
-        <div class="input-info">
-            <input type="text" placeholder='นามสกุล' name="lname">
-        </div>
-        <div class="input-info">
-            <input type="text" placeholder='เบอร์โทรศัพท์' name="phone">
-        </div>
-        <div class="input-info">
-            <input type="email" placeholder='อีเมลล์' name="email">
-        </div>
-        <div class="input-info">
-            <input type="password" placeholder='รหัสผ่าน' name="password">
-        </div>
-        <div class="input-info">
-            <input type="password" placeholder='ยืนยันรหัสผ่าน' name="cfpassword">
-        </div>
-        <div class="input-info">
-            <input type="submit" name="signup" value="Sign in">
-        </div>
-
-        <p>คลิกเพื่อ เข้าสู่ระบบ<a href="login.php">Login</a></p>
-
-    </form>
+            <p>คลิกเพื่อ เข้าสู่ระบบ <a href="signin.php">Sign in</a></p>
+        </form>
+        <hr>
+    </div>
 </body>
 
 </html>
