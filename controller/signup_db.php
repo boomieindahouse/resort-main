@@ -59,7 +59,7 @@
                     $_SESSION['success'] = "Sign up completely! <a href='singup.php' class='alert-link'>Click here</a>for sign in";
                     header("location: signup.php");
                 } else {
-                    $_SESSION['error'] = "We found something wrong"
+                    $_SESSION['error'] = "We found something wrong";
                     header("location: signup.php");
                 }
 
