@@ -59,7 +59,7 @@
     if(count($error) == 0){
         $sql = "INSERT INTO users (personal_id,password,fname,lname,email) VALUES ('personal_id','password','fname','lname','email',)";
         mysqli_query($conn, $sql);
-        $_SESSION['cardid'] = $cardid;
+        $_SESSION['cardid'] = $personal_id;
         $_SESSION['succes'] = "You are logged in";
         header('location:index.php');
     }
