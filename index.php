@@ -1,27 +1,38 @@
 <?php
-    session_start();
-    require_once 'connect.php';
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="register.php">
-</head>
-
-<body>
-    <header><h1>Hello Project</h1></header>
+    require_once 'vendor/autoload.php';
+    $router = new AltoRouter();
     
-    <div class = "content">
-        <a href="views/signup.php">สมัครสมาชิก</a>
-        <a href="views/signin.php">เข้าสู่ระบบ</a>
+    //front-end
+    $router->map('GET', '/', function () {
+        require __DIR__ . '/views/homepage.php';
+      
+    });
+    $router->map('GET', '/signup', function () {
+        require __DIR__ . '/views/signup.php';
+     
+    });
+    $router->map('GET', '/booking', function () {
+        echo "this is booking";
+     
+    });
 
-    </div>   
-   
+
+    //back-end
+    $router->map('POST', '/signup_db', function () {
+        require __DIR__ . '/controller/signup_db.php';
+    });
 
 
-</body>
-</html>
+    $match = $router->match();
+
+// Here comes the new part, taken straight from the docs:
+
+// call closure or throw 404 status
+if ($match && is_callable($match['target'])) {
+    call_user_func_array($match['target'], $match['params']);
+} else {
+    // no route was matched
+    header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+    echo "404";
+}
+?>
