@@ -5,15 +5,15 @@
     //front-end
     $router->map('GET', '/', function () {
         require __DIR__ . '/views/homepage.php';
-      
     });
     $router->map('GET', '/signup', function () {
         require __DIR__ . '/views/signup.php';
-     
     });
-    $router->map('GET', '/booking', function () {
-        echo "this is booking";
-     
+    $router->map('GET', '/signin', function () {
+        require __DIR__ . '/views/signin.php';
+    });
+    $router->map('GET', '/admin/dashboard', function(){
+        require __DIR__ . '/views/admin/dashboard.php';
     });
 
 
@@ -33,6 +33,6 @@ if ($match && is_callable($match['target'])) {
 } else {
     // no route was matched
     header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
-    echo "404";
+    require __DIR__ . '/views/404page.php';
 }
 ?>

@@ -71,7 +71,7 @@
                     $stmt->bindParam(":phone", $phone);
                     $stmt->bindParam(":password", $passwordHash);
                     $stmt->execute();
-                    $_SESSION['success'] = "Sign up completely! <a href='singup' class='alert-link'>Click here</a>for sign in";
+                    $_SESSION['success'] = "Sign up completely!";
                     header("location: /signup");
                     exit;
                 } else {

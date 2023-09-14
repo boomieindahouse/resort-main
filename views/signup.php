@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign up</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     
@@ -74,7 +74,7 @@
             </div>
             <button type="submit" name="signup" class="btn btn-primary">sign up</button>
 
-            <p>คลิกเพื่อ เข้าสู่ระบบ <a href="signin.php">Sign in</a></p>
+            <p>คลิกเพื่อ เข้าสู่ระบบ <a href="/views/signin.php">Sign in</a></p>
         </form>
         <hr>
     </div>
