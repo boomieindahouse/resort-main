@@ -46,7 +46,7 @@
 
             <div class="mb-3">
                 <label for="email" class="form-label">เลขบัตรประชาชน</label>
-                <input type="text" class="form-control" name="personal_id" id="personal_id" aria-describedy="personal-id" maxlength="13">
+                <input type="text" class="form-control" pattern="^[0-9]{13}$" title="กรุณากรอกเลขประจำตัวประชาชน 13 หลัก" name="personal_id" id="personal_id" aria-describedy="personal-id" maxlength="13">
             </div>
             <div class="mb-3">
                 <label for="first name" class="form-label">ชื่อ</label>
@@ -62,7 +62,7 @@
             </div>
             <div class="mb-3">
                 <label for="phone number" class="form-label">เบอร์โทรศัพท์</label>
-                <input type="text" class="form-control" name="phone" maxlength="10">
+                <input type="tel" pattern="^[0-9]{10}$" title="กรุณากรอกเฉพาะเบอร์เท่านั้น" class="form-control" name="phone" maxlength="10">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">รหัสผ่าน</label>

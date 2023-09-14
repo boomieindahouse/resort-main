@@ -4,6 +4,7 @@ session_start();
 if (isset($_POST['signin'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
+    
 
     if (empty($email)) {
         $_SESSION['error'] = 'Please enter your email';
@@ -30,6 +31,7 @@ if (isset($_POST['signin'])) {
 
             if ($check_data->rowCount() > 0) {
                 if ($email == $row['email']) {
+                    
                     if (password_verify($password, $row['password'])) {
                         if ($row['role'] == 'admin') {
                             $_SESSION['admin_login'] = $row['user_id'];

@@ -21,6 +21,9 @@
     $router->map('POST', '/signup_db', function () {
         require __DIR__ . '/controller/signup_db.php';
     });
+    $router->map('POST', '/signin_db', function () {
+        require __DIR__ . '/controller/signin_db.php';
+    });
 
 
     $match = $router->match();

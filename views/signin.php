@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(isset($_SESSION['admin_login'])){
+        header('location: /admin/dashboard');
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +24,7 @@
         <hr>
         <form action="/signin_db" method="post">
         <?php if(isset($_SESSION['error'])) { ?>
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-danger">
             <?php
                 echo $_SESSION['error'];
                 unset($_SESSION['error']);
@@ -28,7 +32,7 @@
         </div>
         <?php } ?>
         <?php if(isset($_SESSION['success'])) { ?>
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success">
             <?php
                 echo $_SESSION['success'];
                 unset($_SESSION['success']);
@@ -36,7 +40,7 @@
         </div>
         <?php } ?>
         <?php if(isset($_SESSION['warning'])) { ?>
-        <div class="alert alert-warning" role="alert">
+        <div class="alert alert-warning">
             <?php
                 echo $_SESSION['warning'];
                 unset($_SESSION['warning']);
@@ -53,7 +57,7 @@
                 <input type="password" class="form-control" name="password">
             </div>
 
-            <button type="submit" name="signup" class="btn btn-primary">sign in</button>
+            <button type="submit" name="signin" class="btn btn-primary">sign in</button>
 
             <p>คลิกเพื่อ สมัครสมาชิก <a href="/views/signup.php">Sign up</a></p>
         </form>

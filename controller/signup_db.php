@@ -62,8 +62,8 @@
                     exit;
                 }else if(!isset($_SESSION['error'])){
                     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-                    $stmt = $conn->prepare("INSERT INTO users(personal_id, fname, lname, email, phone, password) 
-                                            VALUES(:personal_id, :fname, :lname, :email, :phone, :password)");
+                    $stmt = $conn->prepare("INSERT INTO users(personal_id, fname, lname, email, phone, password, role) 
+                                            VALUES(:personal_id, :fname, :lname, :email, :phone, :password, 'admin')");
                     $stmt->bindParam(":personal_id", $personal_id);
                     $stmt->bindParam(":fname", $fname);
                     $stmt->bindParam(":lname", $lname);
