@@ -24,6 +24,9 @@
     $router->map('POST', '/signin_db', function () {
         require __DIR__ . '/controller/signin_db.php';
     });
+    $router->map('GET', '/logout', function () {
+        require __DIR__ . '/controller/logout_db.php';
+    });
 
 
     $match = $router->match();

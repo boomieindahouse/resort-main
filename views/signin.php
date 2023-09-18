@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION['admin_login'])){
-        header('location: /admin/dashboard');
+        header('location: /');
         exit;
     }
 ?>

@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="register.php">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/homepage.css">
+    <link rel="stylesheet" href="/styles/index.css">
 </head>
 
 <body>
-    <header><h1>Hello Project</h1></header>
-    
-    <div class = "content">
-        <a href="views/signup.php">สมัครสมาชิก</a>
-        <a href="views/signin.php">เข้าสู่ระบบ</a>
-
-    </div>   
+    <?php include("./component/header.php"); ?>
+    <div class="content">
+        
+    </div>
    
 
 
