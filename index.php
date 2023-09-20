@@ -15,7 +15,13 @@
     $router->map('GET', '/admin/dashboard', function(){
         require __DIR__ . '/views/admin/dashboard.php';
     });
-
+    $router->map('GET', '/admin/edit_room', function(){
+        require __DIR__ . '/views/admin/edit_room.php';
+    });
+    $router->map('GET', '/admin/dashboard', function(){
+        require __DIR__ . '/views/admin/edit_room.php';
+    });
+    
 
     //back-end
     $router->map('POST', '/signup_db', function () {
