@@ -1,0 +1,181 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  .containerbox{
+    display:flex;
+    height:100%;
+    width:100%;
+    padding:0;
+    /* border: 2px solid red; */
+  }
+  .resort-logo{
+    text-align: center;
+    padding-top: 20px;
+  }
+  .sidebar{
+    width:15%;
+    height:100vh;
+    /* border: 2px solid green; */
+    background-color: #293036;
+    color: white;
+  }
+  .sidebar .resort-logo{
+    height: 10vh;
+    /* border: 2px solid pink; */
+  }
+  .sidebar .nav-item{
+    height: 65vh;
+    /* border: 2px solid purple; */
+  }
+  .sidebar .profile-admin{
+    height: 25vh;
+    /* border: 2px solid magenta; */
+  }
+
+  .side-foot{
+    text-align: center;
+    margin-top: 20vh;
+  }
+
+  .content{
+    /* border:1px solid blue; */
+    width:85%;
+    background-color: #212529;
+  }
+ 
+  .header{
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+    padding: 20px;
+    /* border:2px solid gray; */
+}
+
+  .header .header-left{
+    color: white;
+  }
+
+  .room-status{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+}
+
+.room-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.footer{
+    height: 5vh;
+    text-align: center;
+}
+
+.dropdown-status {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown-status:hover .dropdown-content {display: block;}
+
+ul {
+  list-style-type: none;
+}
+li{
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.footer{
+  margin-top: 15px;
+}
+
+.tb_warpper{
+  width: 100%;
+  /* border:2px solid rgb(194, 134, 134); */
+  height: 75vh;
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.room-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.room-img{
+  width: 50%;
+  height: 100px;
+  border-radius: 10px;
+  margin-left: 30px;
+}
+.detail-room{
+  width: 50%;
+  text-align: center;
+}
+td button{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 60px;
+}
+button{
+  background-color: #0d6efd;
+  color: white;
+  border: 0px;
+  padding: 5px;
+  
+}
+button:hover{
+  opacity: 0.8;
+}
+
+.signout{
+  color: whitesmoke;
+}
+
+input[type="date"]{
+  background-color: #7b848b;
+  padding: 2px;
+  top: 50%;
+  left: 50%;
+  font-family: "Roboto Mono",monospace;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
