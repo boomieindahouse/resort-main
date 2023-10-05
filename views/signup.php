@@ -15,10 +15,9 @@
     </head>
 
 <body>
-    <div class="container">
-        <h3 class="mt-4">Sign Up</h3>
-        <hr>
-        <form action="/signup_db" method="post">
+    <h1>Project</h1>
+
+    <form action="/signup_db" method="post">
         <?php if(isset($_SESSION['error'])) { ?>
         <div class="alert alert-danger" role="alert">
             <?php
