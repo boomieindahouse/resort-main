@@ -215,7 +215,7 @@
 
         <div class="footer">
           <p style="color: white; font-size: 14px;">
-            Cightpyrop © Designed & Developed by Boomieindahouse 2023
+            <!-- Cightpyrop © Designed & Developed by Boomieindahouse 2023 -->
           </p>
         </div>
     </div>
