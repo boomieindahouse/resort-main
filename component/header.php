@@ -8,10 +8,7 @@
         <div class="nav-items-rt">
            
                 <li class="nav-item ">
-                    <a href="/signup">สมัครสมาชิก</a>
-                </li>
-                <li class="nav-item ">
-                    <a href="/signin">เข้าสู่ระบบ</a>
+                    <a href="/signin">สำหรับพนักงาน</a>
                 </li>
             
         </div>
