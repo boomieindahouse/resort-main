@@ -14,7 +14,7 @@
                 <form action="add_room_controller.php" method="post">
                     <div class="form-group">
                         <label for="roomName">Room Name</label>
-                        <input type="text" class="form-control" id="roomname" name="roomname">
+                        <input type="file" class="form-control" id="roomname" name="roomname">
                     </div>
                     <div class="form-group">
                         <label for="roomName">Bed Type</label>

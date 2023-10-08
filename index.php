@@ -21,6 +21,9 @@
     $router->map('GET', '/admin/dashboard', function(){
         require __DIR__ . '/views/admin/edit_room.php';
     });
+    $router->map('GET', '/admin/employee', function(){
+        require __DIR__ . '/views/admin/employee.php';
+    });
     
     
 

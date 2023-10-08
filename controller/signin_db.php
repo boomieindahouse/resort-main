@@ -33,7 +33,7 @@ if (isset($_POST['signin'])) {
                 if ($email == $row['email']) {
                     
                     if (password_verify($password, $row['password'])) {
-                        if ($row['role'] == 'admin') {
+                        if ($row['permiss_id'] == '1') {
                             $_SESSION['admin_login'] = $row['user_id'];
                             header("location: /admin/dashboard");
                             exit;

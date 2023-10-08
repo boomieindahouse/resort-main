@@ -111,7 +111,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white">
+            <a href="./employee" class="nav-link text-white">
               <svg class="bi me-2" width="0" height="0">
                 <use xlink:href="#people-circle"></use>
               </svg>
