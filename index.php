@@ -6,6 +6,9 @@
     $router->map('GET', '/', function () {
         require __DIR__ . '/views/homepage.php';
     });
+    $router->map('GET', '/signup', function () {
+        require __DIR__ . '/views/signup.php';
+    });
     $router->map('GET', '/signin', function () {
         require __DIR__ . '/views/signin.php';
     });
@@ -22,6 +25,9 @@
     
 
     //back-end
+    $router->map('POST', '/signup_db', function () {
+        require __DIR__ . '/controller/signup_db.php';
+    });
     $router->map('POST', '/signin_db', function () {
         require __DIR__ . '/controller/signin_db.php';
     });
