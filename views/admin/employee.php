@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edit Room</title>
+  <title>Employee</title>
   <link rel="stylesheet" href="/styles/testdashboard.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -12,7 +12,7 @@
 
 <body>
 
-  <?php include("addroom_modal.php") ?>
+  <?php include("addemployee_modal.php") ?>
   <!-- <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -161,54 +161,36 @@
               <a href="#">Newest</a>
             </div>
           </div>
-          <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#roomModal">Add Employee</button>
+          <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#empModal">Add Employee</button>
           <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">Add Room</button> -->
         </div>
       </div>
 
       //ตารางพนักงาน
-      <div class="tb_warpper">
-          <table class="table table-dark" id="table_room">
-            <thead>
-              <tr>
-                <th scope="col">Room Name</th>
-                <th scope="col">Bed Type</th>
-                <th scope="col">zone</th>
-                <th scope="col">Status</th>
-                <th scope="col">Book Date</th>
-                <th scope="col">Event Action</th>
-              </tr>
-            </thead>
-            <tbody class="tbody_post">
-              <td>
-                <div class="room-box">
-                  <img class="room-img" src="/assets/roomhotel.jpg" alt="">
-                  <div class="detail-room">
-                    <h5>No.101A</h5>
-                  </div>
-                </div>
-              </td>
-              <td>2</td>
-              <td>1</td>
-              <td>Available</td>
-              <td>22-9-2023</td>
-              <td>
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
-            </tbody>
-          </table>
+      <hr>
+      <?php if (isset($_SESSION['success'])) { ?>
+        <div class="alert alert-success">
+          <?php
+          echo $_SESSION['success'];
+          unset($_SESSION['success']);
+          ?>
         </div>
-        
-
-
-
-
-        <div class="footer">
-          <p style="color: white; font-size: 14px;">
-            <!-- Cightpyrop © Designed & Developed by Boomieindahouse 2023 -->
-          </p>
+      <?php } ?>
+      <?php if (isset($_SESSION['error'])) { ?>
+        <div class="alert alert-danger">
+          <?php
+          echo $_SESSION['error'];
+          unset($_SESSION['error']);
+          ?>
         </div>
+      <?php } ?>
+
+
+      <div class="footer">
+        <p style="color: white; font-size: 14px;">
+          <!-- Cightpyrop © Designed & Developed by Boomieindahouse 2023 -->
+        </p>
+      </div>
     </div>
   </div>
 

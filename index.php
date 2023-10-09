@@ -37,6 +37,10 @@
     $router->map('GET', '/logout', function () {
         require __DIR__ . '/controller/logout_db.php';
     });
+    $router->map('POST', '/add_emp_db', function () {
+        require __DIR__ . '/controller/add_emp_db.php';
+    });
+
 
 
     $match = $router->match();
