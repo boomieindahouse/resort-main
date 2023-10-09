@@ -12,7 +12,7 @@
 
             <div class="modal-body">
                 <!-- ตัวอย่างฟอร์มสำหรับเพิ่มห้องใหม่ -->
-                <form action="/add_emp_db" method="post">
+                <form action="/add_emp_db" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="fname">First name</label>
                         <input type="text" class="form-control" id="fname" name="fname">
@@ -32,10 +32,9 @@
                     </div>
                     <div class="form-group">
                         <label for="permission">Permission</label><br>
-                        <!-- <input type="text" class="form-control" id="permiss_name" name="permiss_name"> -->
                         <select class="form-select" aria-label="Default select example" name="permiss_id">
-                            <option value="พนักงาน">พนักงาน</option>
-                            <option value="ผู้ดูแล">ผู้ดูแล</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Employee</option>
                         </select>
                     </div>
                     <div class="form-group">

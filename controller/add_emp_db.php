@@ -1,8 +1,8 @@
 <?php 
     session_start();
+    require_once "connect.php";
     
-    include('connect.php');
-    if (isset($_POST['addemp'])){
+    if (isset($_POST['addemp'])) {
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $email = $_POST['email'];
@@ -18,7 +18,7 @@
         $filePath = 'uploads/'.$fileNew;
 
         if (in_array($fileActExt, $allow)) {
-            if(img['size'] > 0 && $img['error'] == 0) {
+            if($img['size'] > 0 && $img['error'] == 0) {
                 if (move_uploaded_file($img['tmp_name'], $filePath)) {
                     $sql = $conn->prepare("INSERT INTO users(fname, lname, email, phone, permiss_id, personal_id, img) VALUES(:fname, :lname, :email, :phone, :permiss_id, :personal_id, :img)");
                     $sql->bindParam(":fname", $fname);

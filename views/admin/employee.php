@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -184,6 +188,37 @@
           ?>
         </div>
       <?php } ?>
+
+      <!-- Employee Data -->
+      <div class="tb_warpper">
+          <table class="table table-dark" id="table_room">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Permission</th>
+                <th scope="col">Personal ID</th>
+                <th scope="col">Image</th>
+                <th scope="col">Event Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>boom</td>
+                <td>boom</td>
+                <td>boom</td>
+                <td>boom</td>
+                <td>boom</td>
+                <td>boom</td>
+                <td>boom</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
 
       <div class="footer">
