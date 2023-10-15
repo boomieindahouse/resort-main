@@ -60,7 +60,7 @@
     <!--Sidebar-->
     <div class="sidebar">
       <div class="resort-logo">
-        <h3>Dashboard</h3>
+        <h3>Logo</h3>
       </div>
       <!--wait for profile admin
         <div class="profile-admin">
@@ -153,9 +153,9 @@
 
       <div class="room-status">
         <div class="ct-left">
-          <button>All Status</button>
+          <!-- <button>All Status</button>
           <button>Available</button>
-          <button>Sold out</button>
+          <button>Sold out</button> -->
         </div>
         <div class="ct-right">
           <div class="dropdown-status">
@@ -206,7 +206,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <!-- <tr>
                 <th scope="row">1</th>
                 <td>boom</td>
                 <td>boom</td>
@@ -215,7 +215,7 @@
                 <td>boom</td>
                 <td>boom</td>
                 <td>boom</td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>

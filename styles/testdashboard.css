@@ -122,7 +122,7 @@ li{
 .tb_warpper{
   width: 100%;
   /* border:2px solid rgb(194, 134, 134); */
-  height: 75vh;
+  height: 60vh;
   padding: 10px;
   overflow-x: hidden;
   overflow-y: scroll;

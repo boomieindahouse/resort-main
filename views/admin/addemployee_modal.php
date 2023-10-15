@@ -26,6 +26,14 @@
                         <input type="text" class="form-control" id="email" name="email">
                     </div>
                     <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="cfpassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="cfpassword" name="cfpassword">
+                    </div>
+                    <div class="form-group">
                         <label for="phone">Phone</label>
                         <input type="tel" pattern="^[0-9]{10}$" class="form-control" id="phone" name="phone"
                             maxlength="10">
