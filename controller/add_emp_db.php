@@ -36,10 +36,10 @@
                     $sql->execute();
 
                     if ($sql) {
-                        $_SESSION['success'] = "Data has been inserted successfully";
+                        $_SESSION['success'] = "เพิ่มผู้ใช้งานเรียบร้อยแล้ว";
                         header("location: /admin/employee");
                     } else {
-                        $_SESSION['error'] = "Data has not been inserted successfully";
+                        $_SESSION['error'] = "ไม่สามารถเพิ่มผู้ใช้งานได้";
                         header("location: /admin/employee");
                     }
                 }
