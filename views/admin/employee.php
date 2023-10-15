@@ -235,9 +235,9 @@ include 'connect.php';
                 <td>
                   <?php
                   $permiss_id = $user['permiss_id'];
-                  if ($permiss_id === '1') {
+                  if ($permiss_id == '1') {
                     echo 'Admin';
-                  } elseif ($permiss_id === '2') {
+                  } elseif ($permiss_id == '2') {
                     echo 'Employee';
                   }
                   ?>
@@ -247,7 +247,7 @@ include 'connect.php';
                 </td>
                 <td class="text-center" style="width: 300px;">
                   <a href="" class="btn btn-primary btn-icon box-shadow" style="width: 79.25px;"><i class="zmdi zmdi-search zmdi-hc-fw"></i> แสดง</a>
-                  <a href="" class="btn btn-warning btn-icon box-shadow" style=""></i> แก้ไข</a>
+                  <a href="./edit_employee" class="btn btn-warning btn-icon box-shadow" style=""></i> แก้ไข</a>
                   <a href="" class="btn btn-danger btn-icon box-shadow" style=""></i> ลบ</a>
 
                 </td>

@@ -15,14 +15,17 @@
     $router->map('GET', '/admin/dashboard', function(){
         require __DIR__ . '/views/admin/dashboard.php';
     });
-    $router->map('GET', '/admin/edit_room', function(){
+    $router->map('GET', '/admin/dashboard', function(){
         require __DIR__ . '/views/admin/edit_room.php';
     });
-    $router->map('GET', '/admin/dashboard', function(){
+    $router->map('GET', '/admin/edit_room', function(){
         require __DIR__ . '/views/admin/edit_room.php';
     });
     $router->map('GET', '/admin/employee', function(){
         require __DIR__ . '/views/admin/employee.php';
+    });
+    $router->map('GET', '/admin/edit_employee', function(){
+        require __DIR__ . '/views/admin/edit_emp.php';
     });
     
     
