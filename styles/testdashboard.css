@@ -215,8 +215,15 @@ input[type="date"]{
   padding: 20px;
 }
 .edit-emp input{
-  width: 60%;
+  width: 70%;
 }
 .edit-emp #email{
-  width: 80%;
+  width: 60%;
+}
+
+.edit-emp select{
+  width: 40%;
+}
+.edit-emp .container{
+  border: 2px solid green;
 }

@@ -12,10 +12,10 @@
 </head>
 
 <body>
-
+  
   <div class="containerbox">
     <!--Sidebar-->
-    <?php include("./component/sidebar.php") ?>
+    <?php include("./component/emp_sidebar.php") ?>
 
     <!--content-->
     <div class="content">
@@ -104,6 +104,7 @@
     </div>
   </div>
 
+  <script src="./script/modal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
     crossorigin="anonymous"></script>

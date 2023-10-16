@@ -12,21 +12,25 @@
     $router->map('GET', '/signin', function () {
         require __DIR__ . '/views/signin.php';
     });
+    $router->map('GET', '/employee/dashboard', function(){
+        require __DIR__ . '/views/emp/index.php';
+    });
     $router->map('GET', '/admin/dashboard', function(){
         require __DIR__ . '/views/admin/dashboard.php';
     });
     $router->map('GET', '/admin/dashboard', function(){
-        require __DIR__ . '/views/admin/edit_room.php';
+        require __DIR__ . '/views/admin/room/edit_room.php';
     });
     $router->map('GET', '/admin/edit_room', function(){
-        require __DIR__ . '/views/admin/edit_room.php';
+        require __DIR__ . '/views/admin/room/edit_room.php';
     });
     $router->map('GET', '/admin/employee', function(){
-        require __DIR__ . '/views/admin/employee.php';
+        require __DIR__ . '/views/admin/employee/employee.php';
     });
     $router->map('GET', '/admin/edit_employee', function(){
-        require __DIR__ . '/views/admin/edit_emp.php';
+        require __DIR__ . '/views/admin/employee/edit_emp.php';
     });
+    
     
     
 

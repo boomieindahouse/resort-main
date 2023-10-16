@@ -17,7 +17,7 @@
         $extension = explode(".", $img['name']);
         $fileActExt = strtolower(end($extension));
         $fileNew = rand() . "." . $fileActExt;  // rand function create the rand number 
-        $filePath = 'uploads/'.$fileNew;
+        $filePath = 'uploads/user_img/'.$fileNew;
 
         if (in_array($fileActExt, $allow)) {
             if($img['size'] > 0 && $img['error'] == 0) {

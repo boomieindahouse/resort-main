@@ -35,11 +35,11 @@ if (isset($_POST['signin'])) {
                     if (password_verify($password, $row['password'])) {
                         if ($row['permiss_id'] == '1') {
                             $_SESSION['admin_login'] = $row['user_id'];
-                            header("location: /admin/dashboard");
+                            header("location: /admin/employee");
                             exit;
                         } else {
-                            $_SESSION['user_login'] = $row['user_id'];
-                            header("location: /");
+                            $_SESSION['emp_login'] = $row['user_id'];
+                            header("location: /employee/dashboard");
                             exit;
                         }
                     } else {
