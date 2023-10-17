@@ -1,6 +1,6 @@
 <div class="sidebar">
       <div class="resort-logo">
-        <h3>Logo</h3>
+        <h3>Resort</h3>
       </div>
       <!--wait for profile admin
         <div class="profile-admin">
@@ -35,7 +35,7 @@
               <svg class="bi me-2" width="0" height="0">
                 <use xlink:href="#home"></use>
               </svg>
-              Dashboard
+              หน้าหลัก
             </a>
           </li>
           <li>
@@ -43,7 +43,7 @@
               <svg class="bi me-2" width="0" height="0">
                 <use xlink:href="#table"></use>
               </svg>
-              Rooms
+              ห้อง
             </a>
           </li>
           <li>
@@ -51,7 +51,7 @@
               <svg class="bi me-2" width="0" height="0">
                 <use xlink:href="#grid"></use>
               </svg>
-              booking detail
+              รายละเอียดการจอง
             </a>
           </li>
           <li>
@@ -59,7 +59,7 @@
               <svg class="bi me-2" width="0" height="0">
                 <use xlink:href="#people-circle"></use>
               </svg>
-              Employee
+              พนักงาน
             </a>
           </li>
           <li>
@@ -67,7 +67,7 @@
               <svg class="bi me-2" width="0" height="0">
                 <use xlink:href="#people-circle"></use>
               </svg>
-              Expenses
+              ค่าใช้จ่าย
             </a>
           </li>
           <li>
@@ -75,7 +75,7 @@
               <svg class="bi me-2" width="0" height="0">
                 <use xlink:href="#people-circle"></use>
               </svg>
-              Event log
+              ประวัติการกระทำ
             </a>
           </li>
           <li>
@@ -83,7 +83,7 @@
               <svg class="bi me-2" width="0" height="0">
                 <use xlink:href="#people-circle"></use>
               </svg>
-              Profile
+              โปรไฟล์
             </a>
           </li>
           <li>
@@ -91,13 +91,13 @@
               <svg class="bi me-2" width="0" height="0">
                 <use xlink:href="#people-circle"></use>
               </svg>
-              Change Password
+              แก้ไขรหัสผ่าน
             </a>
           </li>
         </ul>
       </div>
 
       <div class="side-foot">
-        <a class="signout" href="/logout">Sign out</a>
+        <a class="signout" href="/logout">ออกจากระบบ</a>
       </div>
     </div>

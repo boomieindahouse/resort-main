@@ -47,6 +47,9 @@
     $router->map('POST', '/add_emp_db', function () {
         require __DIR__ . '/controller/add_emp_db.php';
     });
+    $router->map('POST', '/del_emp_db', function () {
+        require __DIR__ . '/controller/del_emp_db.php';
+    });
 
 
 

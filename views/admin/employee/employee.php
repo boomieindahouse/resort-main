@@ -1,5 +1,6 @@
 <?php
 session_start();
+include ('connect.php');
 if (!isset($_SESSION['admin_login'])) {
   if(isset($_SESSION['user_login'])){
       header('location: /employee/dashboard');
@@ -7,8 +8,18 @@ if (!isset($_SESSION['admin_login'])) {
   }
   header('location: /signin');
   exit;
-} 
-include 'connect.php';
+}
+if (isset($_GET['delemp'])) {
+  $delete_id = $_GET['delemp'];
+  $deletestmt = $conn->query("DELETE FROM users WHERE user_id = $delete_id");
+  $deletestmt->execute();
+
+  if($deletestmt) {
+      echo "<script>alert('ลบพนักงานที่คุณต้องการเรียบร้อยแล้ว');</script>";
+      $_SESSION['success'] = "ลบพนักงานที่คุณต้องการเรียบร้อยแล้ว";
+      header("refresh:2; url=/admin/employee");
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -138,8 +149,8 @@ include 'connect.php';
                 </td>
                 <td class="text-center" style="width: 300px;">
                   <a href="" class="btn btn-primary btn-icon box-shadow" style="width: 79.25px;"><i class="zmdi zmdi-search zmdi-hc-fw"></i> แสดง</a>
-                  <a href="./edit_employee" class="btn btn-warning btn-icon box-shadow" style=""></i> แก้ไข</a>
-                  <a href="" class="btn btn-danger btn-icon box-shadow" style=""></i> ลบ</a>
+                  <a href="./edit_employee?user_id=<?= $user['user_id']; ?>" class="btn btn-warning btn-icon box-shadow" style=""></i> แก้ไข</a>
+                  <a href="?delemp=<?= $user['user_id']; ?>" class="btn btn-danger btn-icon box-shadow" onclick="return confirm('คุณต้องการลบข้อมูลพนักงานคนนี้ใช่หรือไม่');"></i> ลบ</a>
 
                 </td>
               </tr>
