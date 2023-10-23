@@ -18,10 +18,10 @@
     <?php include("./component/emp_sidebar.php") ?>
 
     <!--content-->
-    <div class="content">
+    <div class="dash-content">
       <div class="header">
         <div class="header-left">
-          <h3>Rooms Manage</h3>
+          <h3>Resort Info</h3>
         </div>
         <div class="header-right">
           <div class="calendar">
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="room-status">
+      <!-- <div class="room-status">
         <div class="ct-left">
           <button>All Status</button>
           <button>Available</button>
@@ -46,13 +46,13 @@
           </div>
           <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#roomModal">Add New
             Room</button>
-          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">Add Room</button> -->
+          
         </div>
-      </div>
+      </div> -->
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-      <body>
+      <!-- <body>
         <div class="chart-box">
           <div class="chart-line">
           <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
@@ -91,7 +91,7 @@
             });
           </script>
           </div>
-        </div>
+        </div> -->
 
 
 

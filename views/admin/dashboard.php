@@ -18,7 +18,7 @@
     <?php include("./component/sidebar.php") ?>
 
     <!--content-->
-    <div class="content">
+    <div class="dash-content">
       <div class="header">
         <div class="header-left">
           <h3>Rooms Manage</h3>

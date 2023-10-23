@@ -31,9 +31,7 @@
         require __DIR__ . '/views/admin/employee/edit_emp.php';
     });
     
-    
-    
-
+     
     //back-end
     $router->map('POST', '/signup_db', function () {
         require __DIR__ . '/controller/signup_db.php';

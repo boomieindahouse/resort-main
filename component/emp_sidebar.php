@@ -74,6 +74,6 @@
       </div>
 
       <div class="side-foot">
-        <a class="signout" href="/logout">Sign out</a>
+        <a class="signout" href="/logout">ออกจากระบบ</a>
       </div>
     </div>

@@ -19,8 +19,8 @@
     </head>
 
 <body>
-    <div class="container">
-        <h3 class="mt-4">Sign in</h3>
+    <div class="container" style="max-width:1000px">
+        <h3 class="mt-4">เข้าสู่ระบบ</h3>
         <hr>
         <form action="/signin_db" method="post">
         <?php if(isset($_SESSION['error'])) { ?>
@@ -59,7 +59,7 @@
 
             <button type="submit" name="signin" class="btn btn-primary">sign in</button>
 
-            <p>คลิกเพื่อ สมัครสมาชิก <a href="/views/signup.php">Sign up</a></p>
+            <!-- <p>คลิกเพื่อ สมัครสมาชิก <a href="/views/signup.php">Sign up</a></p> -->
         </form>
         <hr>
     </div>

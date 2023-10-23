@@ -1,7 +1,9 @@
 <div class="sidebar">
       <div class="resort-logo">
+        <br>
         <h3>Resort</h3>
       </div>
+      <hr width="100%;">
       <!--wait for profile admin
         <div class="profile-admin">
           <a
