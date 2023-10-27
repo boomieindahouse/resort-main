@@ -30,6 +30,12 @@
     $router->map('GET', '/admin/edit_employee', function(){
         require __DIR__ . '/views/admin/employee/edit_emp.php';
     });
+    $router->map('GET', '/singleroom', function(){
+        require __DIR__ . '/views/singleroom.php';
+    });
+    $router->map('GET', '/admin/manage_room', function(){
+        require __DIR__ . '/views/admin/room/manage_room.php';
+    });
     
      
     //back-end

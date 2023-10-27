@@ -17,19 +17,8 @@
                         <input type="file" class="form-control" id="roomname" name="roomname">
                     </div>
                     <div class="form-group">
-                    <label for="roomName">Room type</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Default radio
-                        </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Default checked radio
-                        </label>
-                        </div>
+                        <label for="roomName">Bed Type</label>
+                        <input type="text" class="form-control" id="bedtype" name="bedtype">
                     </div>
                     <div class="form-group">
                         <label for="roomName">Zone</label>

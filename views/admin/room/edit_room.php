@@ -1,3 +1,26 @@
+<?php
+session_start();
+include 'connect.php';
+
+$sql = "SELECT
+r.room_id,
+rt.name AS type_name,
+rd.zone,
+rt.price,
+r.room_status
+FROM
+room r
+JOIN
+room_details rd ON r.room_detail_id = rd.room_detail_id
+JOIN
+room_type rt ON rd.room_type_id = rt.room_type_id";
+    $stmt = $conn -> query($sql);
+    $stmt -> execute();
+    $result = $stmt ->fetchAll(PDO::FETCH_ASSOC);
+     print_r($result);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,38 +75,40 @@
         </div>
       </div>
 
-      <div class="tb_warpper">
-        <table class="table table-dark" id="table_room">
-          <thead>
-            <tr>
-              <th scope="col">Room Name</th>
-              <th scope="col">Bed Type</th>
-              <th scope="col">zone</th>
-              <th scope="col">Status</th>
-              <th scope="col">Book Date</th>
-              <th scope="col">Event Action</th>
-            </tr>
-          </thead>
-          <tbody class="tbody_post">
-            <td>
-              <div class="room-box">
-                <img class="room-img" src="/assets/roomhotel.jpg" alt="">
-                <div class="detail-room">
-                  <h5>No.101A</h5>
-                </div>
-              </div>
-            </td>
-            <td>2</td>
-            <td>1</td>
-            <td>Available</td>
-            <td>22-9-2023</td>
-            <td>
-              <button>Edit</button>
-              <button>Delete</button>
-            </td>
-          </tbody>
-        </table>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Room show</h5>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">หมายเลขห้อง</th>
+                    <th scope="col">ประเภทห้อง</th>
+                    <th scope="col">โซน</th>
+                    <th scope="col">ราคา</th>
+                    <th scope="col">สถานะ</th>
+                    <th scope="col">จัดการข้อมูล</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach($result as $val) { ?>
+                  <tr>
+                    <th scope="row"><?php echo $val['room_id']?></th>
+                    <td><?php echo $val['type_name']?></td>
+                    <td><?php echo $val['zone']?></td>
+                    <td><?php echo $val['price']?></td>
+                    <td><?php echo $val['room_status']?></td>
+                    <td><button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#roomModal">view</button></td>
+                  </tr>
+                  <?php } ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>    
       </div>
+
       <div class="footer">
         <p style="color: white; font-size: 14px;">
           <!-- Cightpyrop © Designed & Developed by Boomieindahouse 2023 -->

@@ -281,31 +281,31 @@ require_once 'connect.php';
       <div class="row">
         <div class="col-sm col-md-6 col-lg-4 ftco-animate">
           <div class="room">
-            <a href="rooms.html" class="img d-flex justify-content-center align-items-center" style="background-image: url(assets/image/kingsize.jpg);">
+            <a href="/singleroom" class="img d-flex justify-content-center align-items-center" style="background-image: url(assets/image/kingsize.jpg);">
               <div class="icon d-flex justify-content-center align-items-center">
                 <span class="fa-search"></span>
               </div>
             </a>
             <div class="text p-3 text-center">
-              <h3 class="mb-3"><a href="rooms.html">เตียงเดี่ยว</a></h3>
+              <h3 class="mb-3"><a href="/singleroom">เตียงเดี่ยว</a></h3>
               <p><span class="price mr-2">450 บาท</span> <span class="per">ต่อคืน</span></p>
               <hr>
-              <p class="pt-1"><a href="room-single.html" class="btn-custom">ดูรายละเอียดเพิ่มเติม</a></p>
+              <p class="pt-1"><a href="/singleroom" class="btn-custom">ดูรายละเอียดเพิ่มเติม</a></p>
             </div>
           </div>
         </div>
         <div class="col-sm col-md-6 col-lg-4 ftco-animate">
           <div class="room">
-            <a href="rooms.html" class="img d-flex justify-content-center align-items-center" style="background-image: url(assets/image/twin.png);">
+            <a href="/singleroom" class="img d-flex justify-content-center align-items-center" style="background-image: url(assets/image/twin.png);">
               <div class="icon d-flex justify-content-center align-items-center">
                 <span class="icon-search2"><img src="search-interface-symbol.png" alt=""></span>
               </div>
             </a>
             <div class="text p-3 text-center">
-              <h3 class="mb-3"><a href="rooms.html">เตียงคู่</a></h3>
+              <h3 class="mb-3"><a href="/singleroom">เตียงคู่</a></h3>
               <p><span class="price mr-2">500 บาท</span> <span class="per">ต่อคืน</span></p>
               <hr>
-              <p class="pt-1"><a href="room-single.html" class="btn-custom">ดูรายละเอียดเพิ่มเติม</a></p>
+              <p class="pt-1"><a href="/singleroom" class="btn-custom">ดูรายละเอียดเพิ่มเติม</a></p>
             </div>
           </div>
         </div>
