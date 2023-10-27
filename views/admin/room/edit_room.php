@@ -17,7 +17,7 @@ room_type rt ON rd.room_type_id = rt.room_type_id";
     $stmt = $conn -> query($sql);
     $stmt -> execute();
     $result = $stmt ->fetchAll(PDO::FETCH_ASSOC);
-     print_r($result);
+    //  print_r($result);
 
 ?>
 
@@ -75,12 +75,10 @@ room_type rt ON rd.room_type_id = rt.room_type_id";
         </div>
       </div>
 
+      <div class="room-cont">
       <div class="row justify-content-center">
         <div class="col-md-8">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Room show</h5>
-              <table class="table">
+              <table class="table table-striped table-dark">
                 <thead>
                   <tr>
                     <th scope="col">หมายเลขห้อง</th>
@@ -104,9 +102,8 @@ room_type rt ON rd.room_type_id = rt.room_type_id";
                   <?php } ?>
                 </tbody>
               </table>
-            </div>
-          </div>
         </div>    
+      </div>
       </div>
 
       <div class="footer">
