@@ -21,6 +21,9 @@
     $router->map('GET', '/admin/dashboard', function(){
         require __DIR__ . '/views/admin/room/edit_room.php';
     });
+    $router->map('GET', '/admin/room', function(){
+        require __DIR__ . '/views/admin/room/room.php';
+    });
     $router->map('GET', '/admin/edit_room', function(){
         require __DIR__ . '/views/admin/room/edit_room.php';
     });
@@ -35,6 +38,18 @@
     });
     $router->map('GET', '/admin/manage_room', function(){
         require __DIR__ . '/views/admin/room/manage_room.php';
+    });
+    $router->map('GET', '/booking', function(){
+        require __DIR__ . '/views/admin/booking/booking.php';
+    });
+    $router->map('GET', '/searchbooking', function(){
+        require __DIR__ . '/views/admin/booking/search_bk.php';
+    });
+    $router->map('GET', '/admin/bkdetail', function(){
+        require __DIR__ . '/views/admin/booking/bkdetail.php';
+    });
+    $router->map('GET', '/admin/expense', function(){
+        require __DIR__ . '/views/admin/expense.php';
     });
     
      

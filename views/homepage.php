@@ -376,6 +376,8 @@ require_once 'connect.php';
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
           <li style="list-style-type:none;"><a href="/signin" class="nav-link">สำหรับพนักงาน</a></li>
+          <li style="list-style-type:none;"><a href="/searchbooking" class="nav-link">ค้นหาห้องว่าง</a></li>
+          <li style="list-style-type:none;"><a href="/booking" class="nav-link">จองห้องพัก</a></li>
         </div>
       </div>
     </div>

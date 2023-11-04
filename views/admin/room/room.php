@@ -1,0 +1,164 @@
+<?php
+session_start();
+include ('connect.php');
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee</title>
+  <link rel="stylesheet" href="/styles/testdashboard.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <?php include("addroom_modal.php") ?>
+  <?php include("addtype_modal.php") ?>
+  <?php include("adddetail_modal.php") ?>
+
+  <div class="containerbox">
+    <!--Sidebar-->
+    <?php include("./component/sidebar.php") ?>
+
+    <!--content-->
+    <div class="content">
+      <div class="header">
+        <div class="header-left">
+          <h3>การจัดการห้องพัก</h3>
+        </div>
+        <div class="header-right">
+          <div class="calendar">
+            <input type="date" name="" id="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="emp-status">
+        <div class="ct-left">
+          <!-- <button>All Status</button>
+          <button>Available</button>
+          <button>Sold out</button> -->
+        </div>
+        <div class="ct-right">
+          <!-- <div class="dropdown-status">
+            <button class="dropbtn">Sort by</button>
+            <div class="dropdown-content">
+              <a href="#">Oldest</a>
+              <a href="#">Newest</a>
+            </div>
+          </div> -->
+          <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#roomtypeModal">Add Room type</button>
+          <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#roomdetailModal">Add Room details</button>
+          <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#roomModal">Add New Room</button>
+          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">Add Room</button> -->
+        </div>
+      </div>
+
+      //ตารางพนักงาน
+      <?php if (isset($_SESSION['success'])) { ?>
+        <div class="alert alert-success">
+          <?php
+          echo $_SESSION['success'];
+          unset($_SESSION['success']);
+          ?>
+        </div>
+      <?php } ?>
+      <?php if (isset($_SESSION['error'])) { ?>
+        <div class="alert alert-danger">
+          <?php
+          echo $_SESSION['error'];
+          unset($_SESSION['error']);
+          ?>
+        </div>
+      <?php } ?>
+
+      <!-- Employee Data -->
+      <div class="table-reponsive box" style="color:white;">
+        <table id="table_emp" class="table table-striped table-dark" style="width:100%">
+          <thead class="thead-dark">
+            <tr>
+              <th>Room Number</th>
+              <th>Room Type</th>
+              <th>price</th>
+              <th>Status</th>
+              <th>การกระทำ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+
+              $sql = "SELECT
+              r.room_id,
+              rt.name AS type_name,
+              rd.zone,
+              rt.price,
+              r.room_status
+              FROM
+              room r
+              JOIN
+              room_details rd ON r.room_detail_id = rd.room_detail_id
+              JOIN
+              room_type rt ON rd.room_type_id = rt.room_type_id";
+                  $stmt = $conn -> query($sql);
+                  $stmt -> execute();
+
+            $room = $stmt->fetchAll();
+            foreach ($room as $room) {
+            ?>
+              <tr>
+                <td>
+                  <?php echo $room['room_id'] ?>
+                </td>
+                <td>
+                  <?php echo $room['type_name'] ?>
+                </td>
+                <td>
+                  <?php echo $room['price'] ?>
+                </td>
+                <td>
+                  <?php echo $room['room_status'] ?>
+                </td>
+                
+                <td class="text-center" style="width: 300px;">
+                  <a href="" class="btn btn-primary btn-icon box-shadow" style="width: 79.25px;"><i class="zmdi zmdi-search zmdi-hc-fw"></i> แสดง</a>
+                  <a href="./edit_room?room_id=<?= $room['room_id']; ?>" class="btn btn-warning btn-icon box-shadow" style=""></i> แก้ไข</a>
+                  <a href="?delroom=<?= $room['room_id']; ?>" class="btn btn-danger btn-icon box-shadow" onclick="return confirm('คุณต้องการลบข้อมูลพนักงานคนนี้ใช่หรือไม่');"></i> ลบ</a>
+
+                </td>
+              </tr>
+            <?php
+            }
+            ?>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="footer">
+        <p style="color: white; font-size: 14px;">
+          <!-- Cightpyrop © Designed & Developed by Boomieindahouse 2023 -->
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script/modal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <script>
+    new DataTable('#table_room');
+  </script>
+
+</body>
+
+</html>
