@@ -5,7 +5,6 @@ require_once "connect.php";
 
 
 if (isset($_POST['addbooking'])) {
-    $room_id = $_POST['room_id'];
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
     $room_count = $_POST['room_count'];
@@ -14,21 +13,22 @@ if (isset($_POST['addbooking'])) {
     $lname = $_POST['lname'];
     $phone = $_POST['phone'];
     $car_num = $_POST['car_num'];
-   
+
 
     // คำนวณค่าอื่น ๆ ที่เกี่ยวข้องกับการจองห้องพัก (เช่น ค่าใช้จ่ายอื่น ๆ) ตรวจสอบค่าที่รับจากฟอร์มและปรับปรุงตามความต้องการ
 
     // ใส่ข้อมูลการจองลงในฐานข้อมูล
-    $sql = $conn->prepare("INSERT INTO booking (room_id, start_date, end_date,room_count ,customer_card,fname, lname,phone, car_num) VALUES (:room_id,:start_date, :end_date,:room_count ,:customer_card,:fname, :lname,:phone, :car_num)");
-    $sql->bindParam(":room_id", $room_id);
+    $sql = $conn->prepare("INSERT INTO booking (start_date, end_date, room_count, customer_card, fname, lname, phone, car_num) VALUES (:start_date, :end_date, :room_count, :customer_card, :fname, :lname, :phone, :car_num)");
     $sql->bindParam(":start_date", $start_date);
     $sql->bindParam(":end_date", $end_date);
-    $room_count = $_POST['room_count'];
+    $sql->bindParam(":room_count", $room_count);
+    $sql->bindParam(":customer_card", $customer_card);
     $sql->bindParam(":fname", $fname);
     $sql->bindParam(":lname", $lname);
-    $phone = $_POST['phone'];
+    $sql->bindParam(":phone", $phone);
     $sql->bindParam(":car_num", $car_num);
-    
+
+
 
     // ทำการจองห้องพัก
     if ($sql->execute()) {

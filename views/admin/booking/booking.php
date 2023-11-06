@@ -27,15 +27,15 @@
 
         <!-- เลือกวันที่เช็คอิน -->
         <label for="check_in_date">วันที่เช็คอิน:</label>
-            <input type="date" name="check_in_date" id="check_in_date"/>
+            <input type="date" name="start_date" id="start_date"/>
 
           <!-- เลือกวันที่เช็คเอ้าท์ -->
           <label for="check_out_date">วันที่เช็คเอ้าท์:</label>
-            <input type="date" name="check_out_date" id="check_out_date"/>
+            <input type="date" name="end_date" id="end_date"/>
 
             <!-- จำนวนห้องที่ต้องการจอง -->
             <label for="num_rooms">จำนวนห้องที่ต้องการจอง:</label>
-            <input type="number" name="num_rooms" id="num_rooms"/><br>
+            <input type="number" name="room_count" id="room_count"/><br>
 
          <!-- ข้อมูลผู้จอง -->
          <h2>ข้อมูลผู้จอง</h2>
@@ -49,7 +49,7 @@
             <input type="text" name="lname" id="lname"/>
 
             <label for="phone">เบอร์โทรศัพท์:</label>
-            <input type="text" name="phone" id="phone"/>
+            <input type="text" maxlength="10" name="phone" id="phone"/>
 
             <!-- ข้อมูลรถ (ตัวเลือก) -->
             <h2>ข้อมูลรถ</h2>
@@ -63,6 +63,7 @@
 
             <label for="license_plate">ป้ายทะเบียน:</label>
             <input type="text" name="car_num" id="car_num"/>
+            <br>
 
             <button type="submit" name="addbooking">ยืนยันการจอง</button>
     </form>

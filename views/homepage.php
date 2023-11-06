@@ -57,7 +57,7 @@ require_once 'connect.php';
           <li class="nav-item"><a href="rooms.html" class="nav-link">รูปภาพ</a></li>
           <li class="nav-item"><a href="restaurant.html" class="nav-link">ต่อต่อเรา</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">ข้อมูลที่พัก</a></li>
-          <!-- <li class="nav-item"><a href="/signin" class="nav-link">สำหรับพนักงาน</a></li> -->
+          <li class="nav-item"><a href="/booking" class="nav-link">จองห้องพัก</a></li>
         </ul>
       </div>
     </div>
@@ -377,7 +377,7 @@ require_once 'connect.php';
           </p>
           <li style="list-style-type:none;"><a href="/signin" class="nav-link">สำหรับพนักงาน</a></li>
           <li style="list-style-type:none;"><a href="/searchbooking" class="nav-link">ค้นหาห้องว่าง</a></li>
-          <li style="list-style-type:none;"><a href="/booking" class="nav-link">จองห้องพัก</a></li>
+          <!-- <li style="list-style-type:none;"><a href="/booking" class="nav-link">จองห้องพัก</a></li> -->
         </div>
       </div>
     </div>
