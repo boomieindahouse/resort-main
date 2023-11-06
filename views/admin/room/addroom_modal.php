@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <!-- ตัวอย่างฟอร์มสำหรับเพิ่มห้องใหม่ -->
-                <form action="/add_room_db.php" method="post" enctype="multipart/form-data">
+                <form action="/add_room_db" method="post" enctype="multipart/form-data">
                     <label for="room_id">หมายเลขห้อง:</label>
                     <input type="text" id="room_id" name="room_id" required><br><br>
 

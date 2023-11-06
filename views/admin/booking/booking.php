@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <form id="reserveRoomForm" action="/controller/add_booking_db.php" method="post" enctype="multipart/form-data">
+    <form id="reserveRoomForm" action="/add_booking_db" method="post" enctype="multipart/form-data">
         <h1>ฟอร์มการจองห้องพัก</h1>
         <label for="room_id">ประเภทห้อง</label>
         <select name="room_type" id="room_type">
@@ -40,13 +40,13 @@
          <!-- ข้อมูลผู้จอง -->
          <h2>ข้อมูลผู้จอง</h2>
             <label for="id_card">เลขบัตรประชาชน:</label>
-            <input type="text" name="id_card" id="id_card"/>
+            <input type="text" maxlength="13" name="customer_card" id="customer_card"/>
 
             <label for="first_name">ชื่อ:</label>
-            <input type="text" name="first_name" id="first_name"/>
+            <input type="text" name="fname" id="fname"/>
 
             <label for="last_name">นามสกุล:</label>
-            <input type="text" name="last_name" id="last_name"/>
+            <input type="text" name="lname" id="lname"/>
 
             <label for="phone">เบอร์โทรศัพท์:</label>
             <input type="text" name="phone" id="phone"/>
@@ -62,7 +62,7 @@
             </select>
 
             <label for="license_plate">ป้ายทะเบียน:</label>
-            <input type="text" name="license_plate" id="license_plate"/>
+            <input type="text" name="car_num" id="car_num"/>
 
             <button type="submit" name="addbooking">ยืนยันการจอง</button>
     </form>

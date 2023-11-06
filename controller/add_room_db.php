@@ -9,7 +9,7 @@ if (isset($_POST['addroom'])) {
 
     // You can add additional fields related to rooms as needed
 
-    $sql = $conn->prepare("INSERT INTO room(room_id, room_status, room_detail_id, user_id) 
+    $sql = $conn->prepare("INSERT INTO room(room_id, room_status, room_detail_id) 
                             VALUES(:room_id, :room_status, :room_detail_id)");
     $sql->bindParam(":room_id", $room_id);
     $sql->bindParam(":room_status", $room_status);

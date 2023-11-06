@@ -8,11 +8,11 @@
 </head>
 <body>
     <h1>เพิ่มรายรับและรายจ่าย</h1>
-    <form method="post" action="add_expense_db.php">
+    <form method="post" action="/add_expense_db">
         <label for="name_list">ประเภทรายการ:</label>
         <select name="name_list" id="name_list">
-            <option value="รายรับ">รายรับ</option>
-            <option value="รายจ่าย">รายจ่าย</option>
+            <option value="income">รายรับ</option>
+            <option value="expense">รายจ่าย</option>
         </select>
 
         <label for="price">จำนวนเงิน:</label>

@@ -51,6 +51,7 @@
     $router->map('GET', '/admin/expense', function(){
         require __DIR__ . '/views/admin/expense.php';
     });
+
     
      
     //back-end
@@ -68,6 +69,15 @@
     });
     $router->map('POST', '/del_emp_db', function () {
         require __DIR__ . '/controller/del_emp_db.php';
+    });
+    $router->map('POST', '/add_booking_db', function () {
+        require __DIR__ . '/controller/add_booking_db.php';
+    });
+    $router->map('POST', '/add_room_db', function () {
+        require __DIR__ . '/controller/add_room_db.php';
+    });
+    $router->map('POST', '/add_expense_db', function () {
+        require __DIR__ . '/controller/add_expense_db.php';
     });
 
 
